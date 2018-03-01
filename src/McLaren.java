@@ -10,6 +10,7 @@ public class McLaren extends Frame{
     @Override
     public void paint (Graphics g){
         Graphics2D g2d = (Graphics2D) g;
+        String name="McLaren";
         int x = 0;
         int y = 0;
 
