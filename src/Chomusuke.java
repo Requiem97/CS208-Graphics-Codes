@@ -220,7 +220,7 @@ public class Chomusuke extends Frame {
     public static void main(String[] args) {
         Chomusuke c = new Chomusuke();
         c.setTitle("Chomusuke");
-        c.setSize(1280, 720);
+        c.setSize(604, 700);
         c.setVisible(true);
         c.addWindowListener(new WindowAdapter() {
             @Override
