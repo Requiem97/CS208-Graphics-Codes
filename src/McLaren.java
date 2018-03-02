@@ -86,6 +86,12 @@ public class McLaren extends Frame{
         board2.lineTo(470+x,335+y);
         board2.lineTo(470+x,291+y);
         
+        //winglet(?)
+        GeneralPath winglet = new GeneralPath();
+        winglet.moveTo(347+x, 285+y);
+        winglet.lineTo(425+x, 285+y);
+        winglet.lineTo(427+x, 287+y);
+        
         //front wing
         GeneralPath wing = new GeneralPath();
         wing.moveTo(661+x, 274+y);
@@ -172,6 +178,7 @@ public class McLaren extends Frame{
         g2d.setColor(new Color(74,67,38));
         g2d.fill(fwing);
         g2d.setColor(Color.BLACK);
+        g2d.draw(winglet);
         g2d.fill(board2);
         g2d.setColor(floorColor);
         g2d.fill(board1);
