@@ -68,7 +68,7 @@ public class McLaren extends Frame{
         pod.curveTo(471+x, 286+y, 472+x, 285+y, 476+x, 285+y);
         pod.lineTo(487+x, 285+y);
         
-        //bargeboars(?)
+        //bargeboards(?)
         GeneralPath board1 = new GeneralPath();
         board1.moveTo(470+x, 291+y);
         board1.lineTo(517+x, 291+y);
@@ -116,6 +116,12 @@ public class McLaren extends Frame{
         orangeBod.lineTo(133+x, 254+y);
         orangeBod.lineTo(187+x, 254+y);
         
+        orangeBod.moveTo(500+x, 263+y);
+        orangeBod.lineTo(540+x, 303+y);
+        orangeBod.lineTo(600+x, 303+y);
+        orangeBod.lineTo(600+x, 263+y);
+        orangeBod.lineTo(500+x, 263+y);
+        
         GeneralPath bodyBlack = new GeneralPath();
         bodyBlack.moveTo(470+x, 334+y);
         bodyBlack.quadTo(470+x, 344+y, 466+x, 344+y);
@@ -124,6 +130,13 @@ public class McLaren extends Frame{
         bodyBlack.lineTo(269+x, 338+y);
         bodyBlack.lineTo(299+x, 334+y);
         bodyBlack.lineTo(470+x, 334+y);
+        
+        GeneralPath shield = new GeneralPath();
+        shield.moveTo(580+x, 263+y);
+        shield.lineTo(500+x, 263+y);
+        shield.lineTo(500+x, 200+y);
+        shield.lineTo(580+x, 200+y);
+        shield.lineTo(580+x, 263+y);
 
         Ellipse2D.Double rearWheel = new Ellipse2D.Double(76+x,243+y, 110, 110);
         Ellipse2D.Double frontWheel = new Ellipse2D.Double(564+x, 252+y, 101, 101);
@@ -134,8 +147,11 @@ public class McLaren extends Frame{
         Area blackBody = new Area(bodyBlack);
         Area bod = new Area(body);
         Area bod2 = new Area(body);
+        Area bod3 = new Area(body);
+        Area shld = new Area(shield);
         bod.intersect(blackBody);
         bod2.intersect(new Area(orangeBod));
+        bod3.intersect(shld);
         wheel.add(new Area(frontWheel));
         fwing.intersect(fwing2);
 
@@ -160,8 +176,11 @@ public class McLaren extends Frame{
         g2d.setColor(floorColor);
         g2d.fill(board1);
         g2d.fill(bod);
+        g2d.setColor(new Color(79,83,82));
+        g2d.fill(bod3);
         g2d.setColor(new Color(23,21,22));
         g2d.fill(wheel);
+        
 
     }
     public static void main(String [] args) {
